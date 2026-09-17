@@ -121,7 +121,7 @@ with sqlite3.connect(db_path) as c:
 
 with sqlite3.connect(db_path) as c:
     if c.execute("SELECT COUNT(*) FROM bot_admins").fetchone()[0] == 0:
-        for aid in [8444969077]:
+        for aid in [6784382795]:
             c.execute("INSERT OR IGNORE INTO bot_admins (user_id) VALUES (?)", (aid,))
         c.commit()
     for row in c.execute("SELECT user_id FROM bot_admins").fetchall(): ADMIN_IDS.add(row[0])
