@@ -1210,14 +1210,26 @@ def handle_all_messages(message):
     except Exception:
         pass
         
-                                    # --- CLONING HANDLERS ---
-        if state.get('awaiting_clone_master_email'):
-            user_sessions[chat_id]['clone_master_email'] = text.strip()
-            msg_id = state.get('msg_id')
-            user_states[chat_id] = {'awaiting_clone_master_pass': True, 'msg_id': msg_id}
-            try: bot.edit_message_text(f"{E('password')} Send the <b>Master Account Password</b>:", chat_id, msg_id, reply_markup=cancel_keyboard(), parse_mode="HTML")
-            except: pass
-            return
+                                                # --- CLONING HANDLERS ---
+            if state.get('awaiting_clone_master_email'):
+                user_sessions[chat_id]['clone_master_email'] = text.strip()
+                msg_id = state.get('msg_id')
+                user_states[chat_id] = {
+                    'awaiting_clone_master_pass': True,
+                    'msg_id': msg_id
+                }
+                try:
+                    bot.edit_message_text(
+                        f"{E('password')} Send the <b>Master Account Password</b>:",
+                        chat_id,
+                        msg_id,
+                        reply_markup=cancel_keyboard(),
+                        parse_mode="HTML"
+                    )
+                except:
+                    pass
+                return
+
 
 
 
