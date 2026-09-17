@@ -737,8 +737,6 @@ class SyncCPMNuker:
             except: pass
         return {"ok": True, "name": data.get("Name", "Unknown"), "money": data.get("money", 0), "coin": data.get("coin", 0), "localID": data.get("localID", "Unknown"), "email": td.get("email"), "cars": cars_count}
 
-nuker = SyncCPMNuker()
-
     def clone_account(self, target_uid: int, master_email: str, master_pass: str) -> Dict[str, Any]:
         """Clones money, coins, cars, vinyls, rank/levels, equipment, etc., from master_email to target_uid."""
         # 1. Master Account load aur decrypt karein
@@ -794,7 +792,8 @@ nuker = SyncCPMNuker()
         self.set_rank(target_uid)
         
         return {"ok": True, "message": "ACCOUNT CLONED SUCCESSFULLY"}
-        
+       
+        nuker = SyncCPMNuker()
 
 # ═══════════════════════════════════════════════════════════
 # 🤖 BOT STATE
