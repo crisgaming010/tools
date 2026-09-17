@@ -70,7 +70,7 @@ def btn(text, callback_data): return types.InlineKeyboardButton(text=text, callb
 # ═══════════════════════════════════════════════════════════
 # 🤖 BOT INIT
 # ═══════════════════════════════════════════════════════════
-BOT_TOKEN = '8963316186:AAHGqz3vONAlBmfWccWktwu5ZU8NEyOKw5E'
+BOT_TOKEN = ''
 bot = telebot.TeleBot(BOT_TOKEN, threaded=True, num_threads=100)
 
 try:
