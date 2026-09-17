@@ -789,11 +789,17 @@ class SyncCPMNuker:
             return save_res
             
         # 5. King Rank apply karein
-        self.set_rank(target_uid)
+                self.set_rank(target_uid)
         
         return {"ok": True, "message": "ACCOUNT CLONED SUCCESSFULLY"}
-       
-        nuker = SyncCPMNuker()
+
+
+nuker = SyncCPMNuker()
+
+
+# ═══════════════════════════════════════════════════════════
+# 🤖 BOT STATE
+
 
 # ═══════════════════════════════════════════════════════════
 # 🤖 BOT STATE
